@@ -6,9 +6,10 @@
   padding: 40px 70px;
   width: 100%;
   background: #e9f0f6;
+  margin-bottom: 32px;
 }
 
-.text {
+.content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -46,7 +47,7 @@
     text-align: center;
   }
 
-  .text {
+  .content {
     text-align: center;
   }
 
@@ -62,5 +63,6 @@
 @media (max-width: 575px) {
   .image::before {
     width: 80%;
+    height: 250px;
   }
 }

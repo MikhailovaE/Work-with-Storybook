@@ -1,37 +1,3 @@
-@import url("../../../styles/App.scss");
-
-$desktop-extra-large: 2560px;
-$desktop-large: 1920px;
-$desktop: 1440px;
-$tablet-landscape: 1200px;
-$tablet-portrait: 900px;
-$phone: 600px;
-$phone-small: 374px;
-
-@mixin for-size($media) {
-  // DESKTOP FIRST
-  $breakpoints: (
-    desktop-extra-large: $desktop-extra-large,
-    desktop-large: $desktop-large,
-    desktop: $desktop,
-    tablet-landscape: $tablet-landscape,
-    tablet-portrait: $tablet-portrait,
-    phone: $phone,
-    phone-small: $phone-small,
-  );
-
-  @each $key, $value in $breakpoints {
-    @if $media == $key + "-low" {
-      @media screen and (max-width: $value) {
-        @content;
-      }
-    }
-  }
-}
-.colors {
-  background: #0f0;
-}
-
 .root {
   position: relative;
   margin: auto;
@@ -99,8 +65,7 @@ $phone-small: 374px;
 // ------------------------------------------------------------------------- //
 @media screen and (max-width: 900px) {
   .root {
-    padding-top: 220px;
-    padding-left: 0;
+    padding: 240px 16px 20px;
     text-align: center;
 
     &::after {
@@ -108,6 +73,8 @@ $phone-small: 374px;
       right: auto;
       left: 50%;
       transform: translateX(-50%);
+      width: 250px;
+      height: 250px;
     }
 
     .title {
@@ -116,15 +83,16 @@ $phone-small: 374px;
     }
 
     &.position-horizontal-left {
-      padding-right: 0;
+      padding: 240px 16px 20px;
       text-align: center;
-      padding-top: 220px;
 
       &::after {
         top: 20px;
         right: auto;
         left: 50%;
         transform: translateX(-50%);
+        width: 250px;
+        height: 250px;
       }
     }
 
@@ -133,7 +101,7 @@ $phone-small: 374px;
 
       &::after {
         top: 20px;
-        width: 312px;
+        width: 30%;
         height: 155px;
       }
     }
@@ -142,28 +110,12 @@ $phone-small: 374px;
 
 // RESPONSIVE - PHONE AND LOWER
 // ------------------------------------------------------------------------- //
-@include for-size(phone-low) {
-  .outage {
-    padding-top: 180px;
-
-    &::after {
-      width: 260px;
-      height: 120px;
-    }
-
-    &.position-horizontal-right {
+@media screen and (max-width: 600px) {
+  .root {
+    &.position-horizontal-center {
       &::after {
-        width: 240px;
+        width: 177px;
         height: 150px;
-      }
-    }
-
-    &.outage-impossible {
-      padding-top: 180px;
-
-      &::after {
-        width: 260px;
-        height: 130px;
       }
     }
   }

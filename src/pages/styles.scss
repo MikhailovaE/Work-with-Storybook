@@ -5,13 +5,7 @@
   //   background-color: #000;
   overflow-x: hidden;
   padding-top: 20px;
-
-  &::before {
-    content: url("../images/SVG/ebooks.svg");
-    display: inline-block;
-    width: 240px;
-    height: 240px;
-  }
+  margin-bottom: 32px ;
 }
 
 .login {

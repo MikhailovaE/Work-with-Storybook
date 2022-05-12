@@ -3,7 +3,8 @@ import Input from "../Component/UI/Input/Input";
 import Button from "../Component/UI/Button/Button";
 import { AuthContext } from "../context";
 import { useNavigate } from "react-router-dom";
-import "./styles.scss";
+import styles from "../styles/login.module.scss";
+import loginImg from "../images/SVG/TalkWithFamilyandFriends.svg";
 
 const Login = () => {
   const { isAuth, setIsAuth } = useContext(AuthContext);
@@ -13,44 +14,35 @@ const Login = () => {
     event.preventDefault();
     setIsAuth(true);
     localStorage.setItem("auth", "true");
-    router(`/`);
+    router(`/dashboard`);
   };
 
   return (
     <>
-      <div className="login">
-        <div className="banner">
-          <div className="login-main-text">
-            <h2>Application Login Page</h2>
-            <p>Login or register from here to access.</p>
-          </div>
+      <div className={styles.container}>
+        <div className={styles.img}>
+          <img src={loginImg} alt={loginImg} />
         </div>
-        <div className="main">
-          <div className="login-form">
-            <form onSubmit={login}>
-              <div className="form-group">
-                <Input
-                  label="User Name"
-                  type="text"
-                  className="form-control"
-                  placeholder="User Name"
-                />
+        <div className={styles["login-content"]}>
+          <form onSubmit={login}>
+            <h2 className={styles.title}>Welcome</h2>
+            <Input
+              type="text"
+              className="form-control"
+              placeholder="User Name"
+            />
+            <Input type="password" placeholder="Введите пароль" />
+            {!isAuth && (
+              <div>
+                <Button className={styles.btn} type="submit">
+                  Login
+                </Button>
+                <Button className={styles.btn} type="submit">
+                  Register
+                </Button>
               </div>
-              <div className="form-group">
-                <Input
-                  type="password"
-                  placeholder="Введите пароль"
-                  label="Password"
-                />
-              </div>
-              <Button type="submit">
-                Login
-              </Button>
-              <Button type="submit">
-                Register
-              </Button>
-            </form>
-          </div>
+            )}
+          </form>
         </div>
       </div>
     </>

@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Banner.module.scss";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import Button from "../Button/Button";
 
 export function Banner({ ...props }) {
   const { position, children, ...rest } = props;
