@@ -5,6 +5,7 @@ import { AuthContext } from "../context";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/login.module.scss";
 import loginImg from "../images/SVG/TalkWithFamilyandFriends.svg";
+import ButtonGroup from "../Component/UI/Button/ButtonGroup";
 
 const Login = () => {
   const { isAuth, setIsAuth } = useContext(AuthContext);
@@ -24,23 +25,23 @@ const Login = () => {
           <img src={loginImg} alt={loginImg} />
         </div>
         <div className={styles["login-content"]}>
-          <form onSubmit={login}>
+          <form className={styles.form} onSubmit={login}>
             <h2 className={styles.title}>Welcome</h2>
             <Input
               type="text"
               className="form-control"
               placeholder="User Name"
             />
-            <Input type="password" placeholder="Введите пароль" />
+            <Input type="password" placeholder="Password" />
             {!isAuth && (
-              <div>
-                <Button className={styles.btn} type="submit">
+              <ButtonGroup>
+                <Button type="submit">
                   Login
                 </Button>
-                <Button className={styles.btn} type="submit">
+                <Button type="submit">
                   Register
                 </Button>
-              </div>
+              </ButtonGroup>
             )}
           </form>
         </div>
