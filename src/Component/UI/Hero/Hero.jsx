@@ -4,8 +4,8 @@ import styles from "./Hero.module.scss";
 import { AuthContext } from "../../../context";
 import { useNavigate } from "react-router-dom";
 
-function Hero(props) {
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+function Hero() {
+  const { setIsAuth } = useContext(AuthContext);
   const router = useNavigate();
 
   const logout = () => {

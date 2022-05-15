@@ -1,0 +1,130 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import Button from "../Button";
+import ButtonGroup from '../ButtonGroup'
+
+<Meta title="Component/Button" component={Button} />
+
+## Variants
+You can use 2 variants of buttons:
+
+- primary (default)
+
+- secondary
+
+<Canvas>
+  <Story name="Variants">
+    {() => {
+      return (
+        <>
+            <ButtonGroup>
+                <Button> Primary </Button>
+                <Button variant="secondary"> Secondary </Button>
+            </ButtonGroup>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Disabled
+
+If you need blocked button, use ```isDisabled``` props.
+
+<Canvas>
+  <Story name="Disabled">
+    {() => {
+      return (
+        <>
+            <ButtonGroup>
+                <Button isDisabled> Primary </Button>
+                <Button variant="secondary" isDisabled> Secondary </Button>
+            </ButtonGroup>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Sizes
+
+Use prop ```size=...``` to change button's size.
+
+- sm
+
+- md (default)
+
+- xl
+
+<Canvas>
+  <Story name="Sizes">
+    {() => {
+      return (
+        <>
+            <ButtonGroup>
+                <Button size='sm'> sm </Button>
+            </ButtonGroup>
+            <ButtonGroup>
+                <Button> md </Button>
+            </ButtonGroup>
+            <ButtonGroup>
+                <Button size='xl'> xl</Button>
+            </ButtonGroup>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Controls:
+
+<Canvas>
+  <Story
+    name="Controls"
+    args={{
+      children: "Test",
+      variant: "primary",
+      isDisabled: false,
+      size: "md",
+    }}
+    argTypes={{
+      children: {
+        type: { name: "node" },
+        description: "Button's children",
+        table: {
+          type: { summary: "node" },
+        },
+      },
+      variant: {
+        description: "Variant of button",
+        control: "radio",
+        options: ["primary", "secondary"],
+        table: {
+          type: { summary: "string" },
+          defaultValue: { summary: "primary" },
+        },
+      },
+      isDisabled: {
+        type: { name: "boolean" },
+        description: "Set Disabled state",
+        table: {
+          type: { summary: "boolean" },
+          defaultValue: { summary: false },
+        },
+      },
+      size: {
+        type: { name: "string" },
+        description: "Size of button",
+        control: "radio",
+        options: ["sm", "md", "xl"],
+        table: {
+          type: { summary: "string" },
+          defaultValue: { summary: "md" },
+        },
+      },
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Controls" />

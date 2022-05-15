@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .root {
   position: relative;
   margin: auto;
@@ -23,7 +25,7 @@
   }
 
   .description {
-    color: gray;
+    color: $gray;
     font-family: "Roboto Flex", sans-serif;
   }
 
