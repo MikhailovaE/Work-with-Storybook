@@ -40,6 +40,8 @@
   }
 }
 
+// RESPONSIVE - TABLET PORTRET AND LOWER
+// ------------------------------------------------------------------------- //
 @media screen and (max-width: 900px) {
   .root {
     flex-direction: column;
@@ -60,6 +62,8 @@
   }
 }
 
+// RESPONSIVE - TABLET SMALL PHONE AND LOWER
+// ------------------------------------------------------------------------- //
 @media (max-width: 575px) {
   .image::before {
     width: 80%;

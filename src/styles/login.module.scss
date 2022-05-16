@@ -10,7 +10,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: #DFEBF7;
+  background: #dfebf7;
   padding: 0 2rem;
 }
 
@@ -51,16 +51,16 @@ a:hover {
 }
 
 .form {
-    display: grid;
+  display: grid;
 }
+
+// RESPONSIVE - TABLET LANDSCAPE AND LOWER
+// ------------------------------------------------------------------------- //
 
 @media screen and (max-width: 1050px) {
   .container {
     grid-gap: 5rem;
   }
-}
-
-@media screen and (max-width: 1000px) {
   form {
     width: 290px;
   }
@@ -71,6 +71,8 @@ a:hover {
   }
 }
 
+// RESPONSIVE - TABLET PORTRET AND LOWER
+// ------------------------------------------------------------------------- //
 @media screen and (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
