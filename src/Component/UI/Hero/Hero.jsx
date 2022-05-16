@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Button from "../Button/Button";
+import ButtonGroup from '../Button/ButtonGroup'
 import styles from "./Hero.module.scss";
 import { AuthContext } from "../../../context";
 import { useNavigate } from "react-router-dom";
@@ -24,9 +25,9 @@ function Hero() {
         <h2>
           We are team of talented designers making websites with Bootstrap
         </h2>
-        <div className={styles.action}>
+        <ButtonGroup>
           <Button onClick={logout}>Get Started</Button>
-        </div>
+        </ButtonGroup>
       </div>
       <div className={styles.image}></div>
     </div>
