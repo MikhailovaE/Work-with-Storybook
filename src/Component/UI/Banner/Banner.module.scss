@@ -1,5 +1,9 @@
 @import "../../../styles/variables.scss";
 
+.bannerColors {
+    min-height: 320px;
+}
+
 .root {
   position: relative;
   margin: auto;
@@ -9,7 +13,7 @@
   &::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: -20px;
     left: 0;
     width: 348px;
     height: 302px;
@@ -35,7 +39,7 @@
     padding-left: 0;
 
     &::after {
-      top: 0;
+      top: -30px;
       left: auto;
       right: 0;
       width: 348px;

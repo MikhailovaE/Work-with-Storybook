@@ -1,0 +1,71 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import Banner from "../Banner";
+
+<Meta title="Component/Banner" component={Banner} />
+
+## Position
+
+You can use 3 positions of banners:
+
+- right (default)
+
+- left
+
+- center
+
+For change backgroundColor, use ```backgroundColor=...``` props.
+
+<Canvas>
+  <Story name="Position">
+    {() => {
+      return (
+        <>
+          <Banner
+            position="left"
+            title="Lorem ipsum"
+            description="Suspendisse suscipit lacinia est ut volutpat. Phasellus auctor pulvinar sapien id cursus. Duis libero tellus, commodo quis odio eu, maximus dapibus enim. Integer ut malesuada elit."
+          />
+          <Banner
+            title="Lorem ipsum"
+            description="Suspendisse suscipit lacinia est ut volutpat. Phasellus auctor pulvinar sapien id cursus. Duis libero tellus, commodo quis odio eu, maximus dapibus enim. Integer ut malesuada elit."
+          />
+          <Banner
+            position="center"
+            title="Lorem ipsum"
+            description="Suspendisse suscipit lacinia est ut volutpat. Phasellus auctor pulvinar sapien id cursus. Duis libero tellus, commodo quis odio eu, maximus dapibus enim. Integer ut malesuada elit."
+          />
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+
+### Controls:
+
+<Canvas>
+  <Story
+    name="Controls"
+    args={{
+      title:"Lorem ipsum",
+      description:"Suspendisse suscipit lacinia est ut volutpat.",
+      backgroundColor:"#DEF3F4",
+      position: 'right'
+    }}
+    argTypes={{
+      position: {
+        description: "Position of banner",
+        control: "radio",
+        options: ["right", "left", "center"],
+        table: {
+          type: { summary: "string" },
+          defaultValue: { summary: "primary" },
+        },
+      },
+    }}
+  >
+    {(args) => <Banner {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Controls" />

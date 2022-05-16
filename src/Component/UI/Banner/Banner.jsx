@@ -12,7 +12,7 @@ export function Banner({ ...props }) {
   };
 
   return (
-    <div style={BannerColors}>
+    <div className={styles.bannerColors} style={BannerColors}>
       <div
         className={classNames(
           styles.root,
