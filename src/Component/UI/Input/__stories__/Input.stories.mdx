@@ -1,0 +1,150 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import Input from "../Input";
+
+<Meta title="Component/Input" component={Input} />
+
+## Type
+
+<Canvas>
+  <Story name="Type">
+    {() => {
+      return (
+        <>
+          <h3>Input Text</h3>
+          <Input
+            label="Label"
+            helperText="Description"
+            type="text"
+            placeholder="Input text"
+          />
+          <Input
+            label="Label"
+            helperText="Description"
+            type="text"
+            value="value text"
+          />
+          <h3>Input Password</h3>
+          <Input
+            label="Label"
+            helperText="Description"
+            type="password"
+            placeholder="Password"
+          />
+          <Input
+            label="Label"
+            helperText="Description"
+            type="password"
+            value="Password"
+          />
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+  <Story name="Disabled">
+    {() => {
+      return (
+        <>
+          <h3>Input Text</h3>
+          <Input
+            label="Label"
+            helperText="Description"
+            type="text"
+            isDisabled
+            placeholder="Input text"
+          />
+          <Input
+            label="Label"
+            helperText="Description"
+            type="text"
+            isDisabled
+            value="Value text"
+          />
+          <h3>Input Password</h3>
+          <Input
+            label="Label"
+            helperText="Description"
+            type="password"
+            isDisabled
+            placeholder="Input text"
+          />
+          <Input
+            label="Label"
+            helperText="Description"
+            type="password"
+            isDisabled
+            value="password"
+          />
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+## Invalid
+
+<Canvas>
+  <Story name="Invalid">
+    {() => {
+      return (
+        <>
+          <h3>Input Text</h3>
+          <Input
+            label="Label"
+            helperText="Description"
+            type="text"
+            isInvalid
+            value="Value text"
+          />
+          <h3>Input Password</h3>
+          <Input
+            label="Label"
+            helperText="Description"
+            type="password"
+            isInvalid
+            value="password"
+          />
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### Controls:
+
+<Canvas>
+  <Story
+    name="Controls"
+    args={{
+      label: "Test",
+      isDisabled: false,
+      helperText: "Input description",
+    }}
+    argTypes={{
+      isDisabled: {
+        type: { name: "boolean" },
+        description: "Set Disabled state",
+        table: {
+          type: { summary: "boolean" },
+          defaultValue: { summary: false },
+        },
+      },
+      isInvalid: {
+        type: { name: "boolean" },
+        description: "Set Disabled state",
+        table: {
+          type: { summary: "boolean" },
+          defaultValue: { summary: false },
+        },
+      },
+    }}
+  >
+    {(args) => <Input {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Controls" />

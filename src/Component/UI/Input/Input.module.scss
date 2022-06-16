@@ -1,0 +1,59 @@
+@import "../../../styles/variables.scss";
+
+.input {
+  border: 1px solid $primary;
+  min-height: 34px;
+  line-height: normal;
+  box-sizing: border-box;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.label {
+  font-size: 14px;
+  font-family: "Roboto Flex", sans-serif;
+}
+
+.helperText {
+  font-size: 12px;
+  font-family: "Roboto Flex", sans-serif;
+  margin-top: 0;
+  color: $gray-dark;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 2px 0 8px;
+
+  &.is-disabled {
+    .input {
+      border: 1px solid $gray;
+      background: #d8d8d8;
+      color: #8c8c8c;
+    }
+    .label,
+    .helperText {
+      color: $gray;
+    }
+  }
+
+  &.is-invalid {
+    position: relative;
+    .input {
+      border: 1px solid red;
+      padding-right: 40px;
+
+      & + svg {
+        position: absolute;
+        right: 12px;
+        top: 28px;
+      }
+    }
+
+    .helperText {
+      color: red;
+    }
+  }
+}

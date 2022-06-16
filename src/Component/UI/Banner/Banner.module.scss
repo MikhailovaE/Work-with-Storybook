@@ -1,0 +1,132 @@
+@import "../../../styles/variables.scss";
+
+.bannerColors {
+    min-height: 320px;
+}
+
+.root {
+  position: relative;
+  margin: auto;
+  padding: 70px 0 50px 360px;
+  max-width: 1032px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 348px;
+    height: 302px;
+    background: url("../../../images/SVG/Certificate.svg") no-repeat;
+    background-size: contain;
+  }
+
+  .title {
+    margin: 0 0 16px;
+    line-height: 1.4;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: em(34);
+  }
+
+  .description {
+    color: $gray;
+    font-family: "Roboto Flex", sans-serif;
+  }
+
+  // VARIANT WITH LEFT IMAGE
+  &.position-horizontal-left {
+    padding-right: 360px;
+    padding-left: 0;
+
+    &::after {
+      top: -30px;
+      left: auto;
+      right: 0;
+      width: 348px;
+      height: 302px;
+      background: url("../../../images/SVG/Google Ads.svg") no-repeat;
+      background-size: contain;
+    }
+  }
+
+  // VARIANT WITH IMAGE IN THE CENTER
+  &.position-horizontal-center {
+    padding-top: 350px;
+    padding-left: 0;
+    text-align: center;
+
+    &::after {
+      top: 0;
+      right: auto;
+      left: 50%;
+      height: 288px;
+      background: url("../../../images/SVG/Scrum Meeting.svg") no-repeat;
+      background-size: contain;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+// RESPONSIVE - TABLET LANDSCAPE AND LOWER
+// ------------------------------------------------------------------------- //
+@media screen and (max-width: 900px) {
+  .root {
+    padding: 240px 16px 20px;
+    text-align: center;
+
+    &::after {
+      top: 20px;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 250px;
+    }
+
+    .title {
+      margin-bottom: 32px;
+      font-size: em(24);
+    }
+
+    &.position-horizontal-left {
+      padding: 240px 16px 20px;
+      text-align: center;
+
+      &::after {
+        top: 20px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    &.position-horizontal-center {
+      padding-top: 220px;
+
+      &::after {
+        top: 20px;
+        width: 30%;
+        height: 155px;
+      }
+    }
+  }
+}
+
+// RESPONSIVE - PHONE AND LOWER
+// ------------------------------------------------------------------------- //
+@media screen and (max-width: 600px) {
+  .root {
+    &.position-horizontal-center {
+      &::after {
+        width: 177px;
+        height: 150px;
+      }
+    }
+  }
+}
+
+.section {
+  margin-top: 16px;
+}
